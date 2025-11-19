@@ -41,14 +41,14 @@ jobs:
           run: cd apps/cli && npm ci && npm run build
         - name: Configure Git for release
           run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+            git config --global user.email "action@github.com"
+            git config --global user.name "GitHub Action"
         - name: Check bundle sizes
           run: |
-          echo "Client bundle sizes:"
-          ls -lh dist/assets/
-          echo "Server bundle size:"
-          ls -lh api/index.js
+            echo "Client bundle sizes:"
+            ls -lh dist/assets/
+            echo "Server bundle size:"
+            ls -lh api/index.js
         - name: Release
           run: npx semantic-release
           if: "${{ !contains(github.event.head_commit.message, 'chore(release)') }}"
