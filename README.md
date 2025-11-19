@@ -167,6 +167,8 @@ Validate workflow YAML:
 python3 -c "import yaml; yaml.safe_load(open('.github/workflows/release.yml')); print('Valid')"
 ```
 
+For comprehensive linting of GitHub Actions workflows, use [actionlint](https://github.com/rhysd/actionlint). See the [Contributing Guide](CONTRIBUTING.md#github-actions-linting) for installation and usage.
+
 Enabled Workflows:
 
 - **CLI**
