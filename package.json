@@ -150,6 +150,6 @@
     "*.{js,jsx,ts,tsx,json,md}": "prettier --write"
   },
   "optionalDependencies": {
-    "bufferutil": "^4.0.8"
+    "bufferutil": "^4.0.9"
   }
 }
