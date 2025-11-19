@@ -21,23 +21,30 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+       -
+         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
+       -
+         name: Setup Node.js
+         uses: actions/setup-node@v4
+         with:
+           node-version: 20
+           cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+       -
+         name: Install dependencies
+         run: npm ci
 
-      - name: Install CLI dependencies
-        run: cd apps/cli && npm ci
+       -
+         name: Install CLI dependencies
+         run: cd apps/cli && npm ci
 
-      - name: Build CLI
-        run: npm run build:cli
-       - name: Test CLI
+       -
+         name: Build CLI
+         run: npm run build:cli
+
+       -
+         name: Test CLI
          if: "github.actor != 'dependabot[bot]'"
          env:
            GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -47,9 +54,10 @@ jobs:
              echo -e "test input\n.exit" | timeout 10s node dist/index.js new --output test.txt || true
              if [ -f test.txt ]; then echo "CLI test passed"; else echo "CLI test failed"; exit 1; fi
 
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: cli-test-results
-          path: apps/cli/test.txt
-          retention-days: 7
+       -
+         uses: actions/upload-artifact@v4
+         if: always()
+         with:
+           name: cli-test-results
+           path: apps/cli/test.txt
+           retention-days: 7
