@@ -19,11 +19,11 @@ on:
 
 jobs:
   test:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-    - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -51,8 +51,8 @@ jobs:
             ls -la apps/cli/
             exit 1
           fi
-           echo "CLI build successful"
-       - name: Test CLI
+          echo "CLI build successful"
+      - name: Test CLI
         if: github.actor != 'dependabot[bot]'
         run: |
             cd apps/cli
