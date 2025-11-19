@@ -46,12 +46,12 @@ jobs:
 
       - name: Check CLI build
         run: |
-            if [ ! -f apps/cli/dist/index.js ]; then
-              echo "CLI build failed - dist/index.js not found"
-              ls -la apps/cli/
-              exit 1
-            fi
-            echo CLI build successful
+        if [ ! -f apps/cli/dist/index.js ]; then
+          echo "CLI build failed - dist/index.js not found"
+          ls -la apps/cli/
+          exit 1
+        fi
+        echo CLI build successful
       - name: Test CLI
         if: github.actor != 'dependabot[bot]'
         run: |
