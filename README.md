@@ -1,14 +1,11 @@
-# Harper Autofix
-
-[![Build Status](https://github.com/harpertoken/autofix/actions/workflows/release.yml/badge.svg)](https://github.com/harpertoken/autofix/actions/workflows/release.yml)
-[![npm version](https://img.shields.io/npm/v/@harpertoken/autofix-cli.svg)](https://www.npmjs.com/package/@harpertoken/autofix-cli)
+# Autofix
 
 AI-powered text completion platform featuring a command-line tool, modern web editor, and Node.js server — all built for seamless writing assistance and automated publishing workflows.
 
 | Component                                       | Package                    | Current Version | Distribution                        |
 | ----------------------------------------------- | -------------------------- | --------------- | ----------------------------------- |
 | **CLI Tool**                                    | `@harpertoken/autofix-cli` | **1.0.0**       | Published on npm                    |
-| **Full Autofix System** (Web + Server + Shared) | Monorepo version           | **1.6.0**       | GitHub source + internal publishing |
+| **Full Autofix System** (Web + Server + Shared) | Monorepo version           | **1.0.0**       | GitHub source + internal publishing |
 
 ---
 
@@ -32,7 +29,7 @@ AI-powered text completion platform featuring a command-line tool, modern web ed
 
 ## Requirements
 
-- **Node.js**: v18+
+- **Node.js**: v20+
 - **npm**: v9+
 - **Gemini API Key**: Required for predictions
 
@@ -48,7 +45,7 @@ AI-powered text completion platform featuring a command-line tool, modern web ed
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/harpertoken/autofix.git
+    git clone https://github.com/bniladridas/autofix.git
    cd autofix
    ```
 
@@ -205,7 +202,7 @@ Trigger:
 autofix/
 ├── apps/
 │   ├── cli/          # CLI tool
-│   ├── web/          # Web editor
+│   ├── client/       # Web editor
 ├── packages/
 │   ├── server/       # Node.js backend
 │   └── shared/       # Shared logic
