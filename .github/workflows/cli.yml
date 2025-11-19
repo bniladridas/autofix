@@ -51,7 +51,7 @@ jobs:
               ls -la apps/cli/
               exit 1
             fi
-            echo "CLI build successful"
+            echo CLI build successful
       - name: Test CLI
         if: github.actor != 'dependabot[bot]'
         run: |
