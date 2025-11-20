@@ -113,27 +113,27 @@ export function SettingsPanel({
                 <div className="space-y-4">
                   <SettingsSelect
                     id="completion-mode"
-                    label="Completion"
+                    label="completion"
                     value={completionMode}
                     onValueChange={onCompletionModeChange}
                     options={[
-                      { value: 'word', label: 'Word' },
-                      { value: 'sentence', label: 'Sentence' },
-                      { value: 'paragraph', label: 'Paragraph' },
+                      { value: 'word', label: 'word' },
+                      { value: 'sentence', label: 'sentence' },
+                      { value: 'paragraph', label: 'paragraph' },
                     ]}
                     testId="select-completion-mode"
                   />
 
                   <SettingsSelect
                     id="writing-style"
-                    label="Style"
+                    label="style"
                     value={writingStyle}
                     onValueChange={onWritingStyleChange}
                     options={[
-                      { value: 'casual', label: 'Casual' },
-                      { value: 'formal', label: 'Formal' },
-                      { value: 'creative', label: 'Creative' },
-                      { value: 'technical', label: 'Technical' },
+                      { value: 'casual', label: 'casual' },
+                      { value: 'formal', label: 'formal' },
+                      { value: 'creative', label: 'creative' },
+                      { value: 'technical', label: 'technical' },
                     ]}
                     testId="select-writing-style"
                   />
@@ -146,7 +146,7 @@ export function SettingsPanel({
                 </h3>
                 <div className="flex items-center justify-between">
                   <Label htmlFor="auto-save" className="text-sm font-medium">
-                    Auto-save
+                    auto-save
                   </Label>
                   <Switch
                     id="auto-save"
