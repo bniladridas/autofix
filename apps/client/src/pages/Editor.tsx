@@ -122,9 +122,13 @@ export default function Editor() {
       <WelcomeModal
         isOpen={welcomeOpen}
         onOpenChange={(open) => {
-          setWelcomeOpen(open);
           if (!open) {
-            localStorage.setItem('hasVisited', 'true');
+            setWelcomeOpen(false);
+            try {
+              localStorage.setItem('hasVisited', 'true');
+            } catch (error) {
+              console.error('Failed to write to localStorage:', error);
+            }
           }
         }}
       />
