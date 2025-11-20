@@ -7,12 +7,12 @@ import {
 
 interface WelcomeModalProps {
   isOpen: boolean;
-  onClose: () => void;
+  onOpenChange: (open: boolean) => void;
 }
 
-export function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
+export function WelcomeModal({ isOpen, onOpenChange }: WelcomeModalProps) {
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-lg" data-testid="modal-welcome">
         <DialogHeader>
           <DialogTitle>Welcome to Autofix</DialogTitle>
