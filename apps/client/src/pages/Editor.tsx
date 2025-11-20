@@ -121,9 +121,11 @@ export default function Editor() {
 
       <WelcomeModal
         isOpen={welcomeOpen}
-        onClose={() => {
-          setWelcomeOpen(false);
-          localStorage.setItem('hasVisited', 'true');
+        onOpenChange={(open) => {
+          setWelcomeOpen(open);
+          if (!open) {
+            localStorage.setItem('hasVisited', 'true');
+          }
         }}
       />
     </div>
